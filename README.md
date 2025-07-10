@@ -12,33 +12,34 @@ This package provides a reusable Laravel service to send WhatsApp messages via M
 
 Step 1: Add the repository (if private)
 
-```json
+<pre> 
 "repositories": [
   {
     "type": "vcs",
     "url": "https://github.com/Digits-Lab-Solutions/whatsapp-service.git"
   }
 ]
-  ```
+</pre> 
 
 Step 2: Require the package via Composer
-
+<pre> 
 composer require digitslab/whatsapp-service:^1.0
 
 php artisan vendor:publish --tag=config
-
+</pre> 
 
 Step 3: Set the following in your .env file:
-
+<pre> 
 WHATSAPP_API_TOKEN=your-msgup-api-token
 WHATSAPP_API_URL=https://msgup.in/api/wpbox/sendtemplatemessage
-
+</pre> 
 
 
 # Controller Example
+<pre> 
 use Illuminate\Http\Request;
 use Digitslab\WhatsAppService\WhatsAppService;
-<pre> 
+
   public function sendWhatsappMsg(Request $request)
   {
       $validated = $request->validate([
