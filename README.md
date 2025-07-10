@@ -38,55 +38,56 @@ WHATSAPP_API_URL=https://msgup.in/api/wpbox/sendtemplatemessage
 # Controller Example
 use Illuminate\Http\Request;
 use Digitslab\WhatsAppService\WhatsAppService;
+<pre> ```php 
+  public function sendWhatsappMsg(Request $request)
+  {
+      $validated = $request->validate([
+          'phone' => 'required|string',
+          'template_name' => 'required|string',
+          'body_parameters' => 'required|array',
+          'document_link' => 'nullable|url',
+          'document_filename' => 'nullable|string',
+      ]);
 
-public function sendWhatsappMsg(Request $request)
-{
-    $validated = $request->validate([
-        'phone' => 'required|string',
-        'template_name' => 'required|string',
-        'body_parameters' => 'required|array',
-        'document_link' => 'nullable|url',
-        'document_filename' => 'nullable|string',
-    ]);
+      $components = [];
 
-    $components = [];
+      // Optional document (header)
+      if ($validated['document_link']) {
+          $components[] = [
+              "type" => "header",
+              "parameters" => [
+                  [
+                      "type" => "document",
+                      "document" => [
+                          "link" => $validated['document_link'],
+                          "filename" => $validated['document_filename'] ?? 'Document.pdf'
+                      ]
+                  ]
+              ]
+          ];
+      }
 
-    // Optional document (header)
-    if ($validated['document_link']) {
-        $components[] = [
-            "type" => "header",
-            "parameters" => [
-                [
-                    "type" => "document",
-                    "document" => [
-                        "link" => $validated['document_link'],
-                        "filename" => $validated['document_filename'] ?? 'Document.pdf'
-                    ]
-                ]
-            ]
-        ];
-    }
+      // Body text parameters
+      $bodyParams = [];
+      foreach ($validated['body_parameters'] as $text) {
+          $bodyParams[] = ["type" => "text", "text" => $text];
+      }
 
-    // Body text parameters
-    $bodyParams = [];
-    foreach ($validated['body_parameters'] as $text) {
-        $bodyParams[] = ["type" => "text", "text" => $text];
-    }
+      $components[] = [
+          "type" => "body",
+          "parameters" => $bodyParams
+      ];
 
-    $components[] = [
-        "type" => "body",
-        "parameters" => $bodyParams
-    ];
+      $response = WhatsAppService::sendTemplateMessage([
+          'phone' => $validated['phone'],
+          'template_name' => $validated['template_name'],
+          'template_language' => 'en',
+          'components' => $components,
+      ]);
 
-    $response = WhatsAppService::sendTemplateMessage([
-        'phone' => $validated['phone'],
-        'template_name' => $validated['template_name'],
-        'template_language' => 'en',
-        'components' => $components,
-    ]);
-
-    return response()->json($response);
-}
+      return response()->json($response);
+  }
+  ``` </pre>
 
 
 Endpoint : POST /ajax/sendWhatsapp
