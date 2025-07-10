@@ -15,13 +15,13 @@
     },
     "autoload": {
         "psr-4": {
-            "Digitslab\\\\WhatsAppService\\\\": "src/"
+            "Digitslab\\WhatsAppService\\": "src/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Digitslab\\\\WhatsAppService\\\\WhatsAppServiceProvider"
+                "Digitslab\\WhatsAppService\\WhatsAppServiceProvider"
             ]
         }
     }
