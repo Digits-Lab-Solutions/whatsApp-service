@@ -1,10 +1,10 @@
 <?php
 
-namespace Digitslab\WhatsappService;
+namespace Digitslab\WhatsAppService;
 
 use Illuminate\Support\Facades\Http;
 
-class WhatsappService
+class WhatsAppService
 {
     public static function send(array $payload): array
     {
