@@ -38,7 +38,7 @@ WHATSAPP_API_URL=https://msgup.in/api/wpbox/sendtemplatemessage
 # Controller Example
 use Illuminate\Http\Request;
 use Digitslab\WhatsAppService\WhatsAppService;
-<pre> ``` 
+<pre> 
   public function sendWhatsappMsg(Request $request)
   {
       $validated = $request->validate([
@@ -87,11 +87,14 @@ use Digitslab\WhatsAppService\WhatsAppService;
 
       return response()->json($response);
   }
-  ``` </pre>
+  </pre>
 
 
-Endpoint : POST /ajax/sendWhatsapp
+Endpoint :
+<pre> POST /ajax/sendWhatsapp
+</pre>
 Sample JSON Payload (Body) : 
+<pre>
 {
   "phone": "919995060510",
   "template_name": "cellsquare_sale_msg_1",
@@ -107,3 +110,4 @@ Sample JSON Payload (Body) :
   "document_link": "https://www.antennahouse.com/hubfs/xsl-fo-sample/pdf/basic-link-1.pdf",
   "document_filename": "Invoice.pdf"
 }
+</pre>
