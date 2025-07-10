@@ -19,7 +19,7 @@ Step 1: Add the repository (if private)
     "url": "https://github.com/Digits-Lab-Solutions/whatsapp-service.git"
   }
 ]
-
+  ```
 
 Step 2: Require the package via Composer
 
