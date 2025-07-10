@@ -30,7 +30,7 @@ class WhatsappService
                 'response' => $response->json()
             ];
         } catch (\Exception $e) {
-            return [
+            return [ 
                 'success' => false,
                 'message' => $e->getMessage()
             ];
