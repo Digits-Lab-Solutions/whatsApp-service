@@ -1,5 +1,14 @@
-## Usage
+# WhatsApp Service Package
 
-use Digitslab\WhatsAppService\WhatsAppService;
+Reusable Laravel package to send WhatsApp messages via MsgUp API.
 
-WhatsAppService::send([...]);
+## Installation
+
+1. Add to your Laravel project's `composer.json`:
+```json
+"repositories": [
+  {
+    "type": "vcs",
+    "url": "https://github.com/Digits-Lab-Solutions/whatsapp-service.git"
+  }
+]
