@@ -97,15 +97,15 @@ Endpoint :
 Sample JSON Payload (Body) : 
 <pre>
 {
-  "phone": "919995060510",
+  "phone": "919999999999",
   "template_name": "cellsquare_sale_msg_1",
   "body_parameters": [
-    "Akarsh",
-    "Digital Spot, Kaniyapuram",
+    "Whatsapp Customer",
+    "Digitslab Solutions",
     "INV-123123",
     "23-01-2023",
     "101.00",
-    "Digital Spot, Kaniyapuram",
+    "Digitslab Solutions",
     "9999999999"
   ],
   "document_link": "https://www.antennahouse.com/hubfs/xsl-fo-sample/pdf/basic-link-1.pdf",
