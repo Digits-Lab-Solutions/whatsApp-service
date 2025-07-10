@@ -1,10 +1,10 @@
 <?php
 
-namespace Digitslab\WhatsAppService;
+namespace Digitslab\WhatsappService;
 
 use Illuminate\Support\ServiceProvider;
 
-class WhatsAppServiceProvider extends ServiceProvider
+class WhatsappServiceProvider extends ServiceProvider
 {
     public function boot()
     {
