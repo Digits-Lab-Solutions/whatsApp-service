@@ -38,7 +38,7 @@ WHATSAPP_API_URL=https://msgup.in/api/wpbox/sendtemplatemessage
 # Controller Example
 use Illuminate\Http\Request;
 use Digitslab\WhatsAppService\WhatsAppService;
-<pre> ```php 
+<pre> ``` 
   public function sendWhatsappMsg(Request $request)
   {
       $validated = $request->validate([
