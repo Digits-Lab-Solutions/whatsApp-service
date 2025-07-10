@@ -12,3 +12,11 @@ Reusable Laravel package to send WhatsApp messages via MsgUp API.
     "url": "https://github.com/Digits-Lab-Solutions/whatsapp-service.git"
   }
 ]
+
+
+2. Publishing Config
+
+After installing the package, publish the config file:
+
+```bash
+php artisan vendor:publish --tag=config

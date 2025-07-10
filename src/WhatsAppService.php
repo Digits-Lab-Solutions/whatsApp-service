@@ -36,4 +36,20 @@ class WhatsAppService
             ];
         }
     }
+
+    public static function sendTemplateMessage(array $data)
+    {
+        $token = config('whatsapp.token');
+        $endpoint = config('whatsapp.endpoint', 'https://msgup.in/api/wpbox/sendtemplatemessage');
+
+        $response = Http::post($endpoint, [
+            'token' => $token,
+            'phone' => $data['phone'],
+            'template_name' => $data['template_name'],
+            'template_language' => $data['template_language'] ?? 'en',
+            'components' => $data['components'],
+        ]);
+
+        return $response->json();
+    }
 }
