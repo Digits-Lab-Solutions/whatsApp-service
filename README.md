@@ -20,3 +20,5 @@ After installing the package, publish the config file:
 
 ```bash
 php artisan vendor:publish --tag=config
+
+

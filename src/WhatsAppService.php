@@ -39,7 +39,7 @@ class WhatsAppService
 
     public static function sendTemplateMessage(array $data)
     {
-        $token = config('whatsapp.token');
+        $token = config('whatsapp.api_token');
         $endpoint = config('whatsapp.endpoint', 'https://msgup.in/api/wpbox/sendtemplatemessage');
 
         $response = Http::post($endpoint, [
